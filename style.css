@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Sloop Script";
+  src: url("assets/sloop-script-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --cream: #f5ebdd;
   --pomegranate: #782f36;
@@ -259,6 +267,7 @@ figure {
   position: relative;
   z-index: 2;
   width: 100%;
+  isolation: isolate;
 }
 
 .editorial-heading.centered {
@@ -288,16 +297,26 @@ figure {
 }
 
 .script-word {
-  position: relative;
+  --script-rotation: -3deg;
+  position: absolute;
+  z-index: 3;
   color: var(--terracotta);
-  width: 86%;
-  margin: -0.025em auto 0;
+  margin: 0;
+  font-family: "Sloop Script", cursive;
+  font-size: clamp(91px, 10.5vw, 208px);
+  font-weight: 400;
+  line-height: .66;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: rotate(var(--script-rotation));
+  transform-origin: center;
 }
 
-.script-word svg {
-  width: 100%;
-  height: auto;
-  overflow: visible;
+.hero-heading .script-word {
+  top: 46%;
+  left: 4%;
+  font-size: clamp(103px, 12vw, 239px);
+  --script-rotation: -6deg;
 }
 
 .hero {
@@ -432,12 +451,6 @@ figure {
   white-space: nowrap;
 }
 
-.hero-heading .script-word {
-  width: 104%;
-  margin-left: -2%;
-  margin-top: -3.5%;
-}
-
 .hero-description {
   width: 83%;
   margin-top: 7px;
@@ -540,9 +553,10 @@ figure {
 }
 
 .flavors .script-word {
-  width: 108%;
-  margin-left: -4%;
-  margin-top: -1.2%;
+  top: 57%;
+  left: 10%;
+  font-size: clamp(104px, 12.4vw, 239px);
+  --script-rotation: -4deg;
 }
 
 .carousel {
@@ -688,8 +702,10 @@ figure {
 }
 
 .menu-section .script-word {
-  width: 65%;
-  margin-top: -1%;
+  top: 67%;
+  left: 21%;
+  font-size: clamp(100px, 11.7vw, 220px);
+  --script-rotation: -5deg;
 }
 
 .menu-categories {
@@ -869,9 +885,10 @@ figure {
 }
 
 .story .script-word {
-  width: 99%;
-  margin-top: -3%;
-  margin-left: -3%;
+  top: 55%;
+  left: 7%;
+  font-size: clamp(108px, 12vw, 229px);
+  --script-rotation: -5deg;
 }
 
 .story-text {
@@ -958,9 +975,10 @@ figure {
 }
 
 .album-section .script-word {
-  width: 115%;
-  margin-left: -7.5%;
-  margin-top: -8%;
+  top: 67%;
+  left: 6%;
+  font-size: clamp(105px, 12vw, 230px);
+  --script-rotation: -5deg;
 }
 
 .album-stage {
@@ -1308,8 +1326,10 @@ figure {
 }
 
 .booking-section .script-word {
-  width: 104%;
-  margin-top: -8%;
+  top: 67%;
+  left: 7%;
+  font-size: clamp(108px, 12vw, 230px);
+  --script-rotation: -5deg;
 }
 
 .booking-table {
@@ -1697,6 +1717,15 @@ dialog[open] {
   animation: heading-in 0.85s var(--ease) 0.15s both;
 }
 
+.motion-ready .script-word {
+  opacity: 0;
+  transform: translateY(18px) rotate(var(--script-rotation));
+}
+
+.motion-ready .is-visible .script-word {
+  animation: sloop-word-in 1s var(--ease) 0.58s both;
+}
+
 .motion-ready .delayed-content {
   opacity: 0;
   transform: translateY(16px);
@@ -1757,6 +1786,13 @@ dialog[open] {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes sloop-word-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--script-rotation));
   }
 }
 
@@ -2028,8 +2064,9 @@ dialog[open] {
     line-height: 0.99;
   }
   .hero-heading .script-word {
-    width: 88%;
-    margin: -3% auto 0;
+    top: 55%;
+    left: 4%;
+    font-size: clamp(89px, 23vw, 130px);
   }
   .hero-description {
     width: 100%;
@@ -2086,7 +2123,7 @@ dialog[open] {
     font-size: clamp(58px, 13.6vw, 104px);
   }
   .script-word {
-    width: 88%;
+    font-size: clamp(82px, 22vw, 126px);
   }
   .flavors {
     padding-inline: 0;
@@ -2099,8 +2136,9 @@ dialog[open] {
     font-size: 17vw;
   }
   .flavors .script-word {
-    width: 110%;
-    margin-left: -5%;
+    top: 61%;
+    left: 9%;
+    font-size: clamp(93px, 25vw, 138px);
   }
   .carousel-window {
     border-radius: 0;
@@ -2147,7 +2185,9 @@ dialog[open] {
     font-size: 12.4vw;
   }
   .menu-section .script-word {
-    width: 77%;
+    top: 69%;
+    left: 15%;
+    font-size: clamp(87px, 23vw, 128px);
   }
   .menu-categories {
     display: grid;
@@ -2191,9 +2231,9 @@ dialog[open] {
     font-size: 14vw;
   }
   .story .script-word {
-    width: 96%;
-    margin-inline: auto;
-    margin-top: -2%;
+    top: 62%;
+    left: 6%;
+    font-size: clamp(93px, 25vw, 139px);
   }
   .story-text {
     padding-top: 23px;
@@ -2262,9 +2302,9 @@ dialog[open] {
     font-size: 17vw;
   }
   .album-section .script-word {
-    margin-top: -7%;
-    width: 111%;
-    margin-left: -5.5%;
+    top: 70%;
+    left: 5%;
+    font-size: clamp(91px, 24vw, 135px);
   }
   .album-stage {
     padding-top: 12px;
@@ -2384,7 +2424,9 @@ dialog[open] {
     font-size: 16vw;
   }
   .booking-section .script-word {
-    margin-top: -8%;
+    top: 70%;
+    left: 4%;
+    font-size: clamp(93px, 25vw, 139px);
   }
   .booking-table {
     width: 69%;
@@ -2473,6 +2515,155 @@ dialog[open] {
   }
 }
 
+
+.editorial-heading {
+  container-type: inline-size;
+  text-align: center;
+}
+
+.editorial-heading .heading-block {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.editorial-heading .script-word {
+  --script-rotation: 0deg;
+  --ink-offset: 0em;
+  --sloop-x: 0px;
+  --sloop-y: 0px;
+  --sloop-size: 36cqi;
+  position: relative;
+  top: auto;
+  left: 50%;
+  width: max-content;
+  margin: -0.45em 0 0;
+  font-size: var(--sloop-size);
+  line-height: 1.332;
+  translate:
+    calc(-50% + var(--ink-offset) + var(--sloop-x))
+    var(--sloop-y);
+}
+
+/* ==========================================================
+   CONTROLLI SLOOP — DESKTOP E TABLET
+
+   --sloop-x: positivo = destra; negativo = sinistra.
+   --sloop-y: positivo = basso; negativo = alto.
+   --sloop-size: grandezza del font, in cqi oppure px.
+
+   cqi mantiene le proporzioni rispetto al titolo:
+   1cqi = 1% della larghezza del contenitore del titolo.
+   Esempio: da 36cqi a 40cqi per ingrandire.
+
+   Gli spostamenti X/Y sono visivi e non spostano i paragrafi.
+   La grandezza modifica anche lo spazio occupato dalla parola.
+   Conserva --ink-offset: centra i contorni reali dei glifi.
+   ========================================================== */
+
+/* DA SEMPRE — titolo iniziale */
+.hero-heading .script-word {
+  --sloop-x: 0px;
+  --sloop-y: -20px;
+  --sloop-size: 25cqi;
+  --ink-offset: -0.0065em;
+}
+
+/* KAMASTRA — sezione cucina */
+.flavors .script-word {
+  --sloop-x: 0px;
+  --sloop-y: -23px;
+  --sloop-size: 25cqi;
+  --ink-offset: -0.1905em;
+  height: 0.98em;
+}
+
+/* MENÙ — sezione menù */
+.menu-section .script-word {
+  --sloop-x: 0px;
+  --sloop-y: -10px;
+  --sloop-size: 25cqi;
+  --ink-offset: -0.0025em;
+  margin-top: -0.34em;
+  line-height: 0.94;
+  height: 0.73em;
+}
+
+/* FAMIGLIA — sezione storia */
+.story .script-word {
+  --sloop-x: -80px;
+  --sloop-y: -10px;
+  --sloop-size: 24cqi;
+  --ink-offset: 0.3395em;
+}
+
+/* CIVITA — sezione album */
+.album-section .script-word {
+  --sloop-x: 10px;
+  --sloop-y: 20px;
+  --sloop-size: 38cqi;
+  --ink-offset: -0.312em;
+  margin-top: -0.42em;
+  line-height: 1.05;
+}
+
+/* TAVOLO — sezione prenotazione */
+.booking-section .script-word {
+  --sloop-x: 100px;
+  --sloop-y: 5px;
+  --sloop-size: 40cqi;
+  --ink-offset: -0.3785em;
+  line-height: 1.08;
+}
+
+/* ==========================================================
+   CONTROLLI SLOOP — SOLO MOBILE (fino a 760px)
+   Questi valori prevalgono sui controlli desktop.
+   Sono inizialmente uguali, ma puoi modificarli separatamente.
+   ========================================================== */
+@media (max-width: 760px) {
+  /* DA SEMPRE */
+  .hero-heading .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 36cqi;
+  }
+
+  /* KAMASTRA */
+  .flavors .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 28cqi;
+  }
+
+  /* MENÙ */
+  .menu-section .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 40cqi;
+  }
+
+  /* FAMIGLIA */
+  .story .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 24cqi;
+  }
+
+  /* CIVITA */
+  .album-section .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 38cqi;
+  }
+
+  /* TAVOLO */
+  .booking-section .script-word {
+    --sloop-x: 0px;
+    --sloop-y: 0px;
+    --sloop-size: 40cqi;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2495,6 +2686,10 @@ dialog[open] {
   .motion-ready .album-stage {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .motion-ready .script-word {
+    opacity: 1 !important;
+    transform: rotate(var(--script-rotation)) !important;
   }
   .family-polaroid {
     transform: rotate(-5deg) !important;

@@ -37,6 +37,6 @@
     "https://www.kamastra.net/wp-content/uploads/2020/06/thumbnail_2425c029-a115-45cc-98f6-be8d0b26f1a6.jpg",
     "https://www.kamastra.net/wp-content/uploads/2020/06/thumbnail_e7e4c6db-8ce0-4629-a71c-e85394d3eae6.jpg"
   ],
-  "lettering": "Tracciati ricostruiti dai mockup forniti per la sola anteprima. Sostituire con i glifi Sloop ottenuti da una licenza web valida.",
-  "font": "Bebas Neue, Google Fonts / SIL Open Font License. Georgia, fallback di sistema temporaneo per i paragrafi."
+  "lettering": "Le parole corsive sono testo HTML che usa il font locale Sloop Script fornito dall’utente; la licenza web va verificata prima della pubblicazione pubblica.",
+  "font": "Bebas Neue, Google Fonts / SIL Open Font License. Sloop Script, font fornito dall’utente. Georgia, fallback di sistema temporaneo per i paragrafi."
 }

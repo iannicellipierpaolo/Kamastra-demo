@@ -37,34 +37,6 @@ async function getArtwork(name) {
   return text.replace(/mask-([a-z-]+)/g, (match) => `${match}${suffix}`);
 }
 
-/** EditorialHeading: titolo semantico e lettering vettoriale indipendente. */
-async function editorialHeading(element) {
-  const lines = element.dataset.heading.split("|");
-  const level = element.dataset.level || "2";
-  const id = element.dataset.headingId;
-  const label = element.dataset.label;
-  element.innerHTML = `
-    <h${level} id="${id}" class="heading-block">
-      ${lines
-        .map(
-          (line) => `
-        <span class="heading-line"><span>${escapeHtml(line)}</span></span>
-      `,
-        )
-        .join("")}
-      <span class="sr-only"> ${escapeHtml(label)}</span>
-    </h${level}>
-    <div class="script-word" aria-hidden="true"></div>
-  `;
-  try {
-    $(".script-word", element).innerHTML = await getArtwork(
-      `word-${element.dataset.word}`,
-    );
-  } catch {
-    $(".script-word", element).textContent = label;
-  }
-}
-
 function initializeDialogs() {
   $$("dialog").forEach((dialog) => {
     dialog.addEventListener("close", () => {
@@ -825,9 +797,9 @@ function initializeEditorialPanels() {
     <p>Le immagini della nonna e della famiglia sono <strong>generate e
     dimostrative</strong>. Le altre fotografie provengono dal sito Kamastra;
     l’autorizzazione alla nuova pubblicazione va confermata.</p>
-    <p>Il lettering è una <strong>ricostruzione vettoriale provvisoria
-    dei riferimenti</strong>: il font Sloop con licenza web deve essere fornito.
-    Georgia è il carattere di lettura provvisorio, da approvare.</p>
+    <p>Il lettering usa il <strong>font Sloop fornito</strong> come testo reale
+    e modificabile, sovrapposto ai titoli in Bebas Neue. Georgia è il carattere
+    di lettura provvisorio, da approvare.</p>
     <p>Menù, prezzi, allergeni, orari ufficiali e fotografie storiche sono
     da validare. Il video, il CMS e la piattaforma di prenotazione
     <strong>non sono ancora collegati</strong>.</p>
@@ -843,7 +815,6 @@ async function main() {
   await initializeMenu();
   const illustrations = $$("[data-art]");
   await Promise.all([
-    ...$$("[data-heading]").map(editorialHeading),
     ...illustrations.map(async (element) => {
       try {
         element.innerHTML = await getArtwork(element.dataset.art);
