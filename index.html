@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F5EBDD" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kamastra · Le cose buone sanno di casa</title>
+    <meta
+      name="description"
+      content="A Civita, tra cucina arbëreshe e ospitalità. Scopri la prima versione del nuovo sito Kamastra."
+    />
+    <meta
+      property="og:title"
+      content="Kamastra · Le cose buone sanno di casa"
+    />
+    <meta
+      property="og:description"
+      content="Un archivio vivente di sapori, persone e ricordi. Civita, Calabria."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta
+      property="og:image"
+      content="https://kamastra-archivio-vivente.civilmite129.chatgpt.site/assets/nonna-demo.webp"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/bebas-neue.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/nonna-demo.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Kamastra",
+        "url": "https://www.kamastra.net/",
+        "telephone": "+39 0981 73387",
+        "email": "info@kamastra.net",
+        "servesCuisine": ["Calabrese", "Arbëreshe"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Piazza Municipio, 3/6",
+          "addressLocality": "Civita",
+          "addressRegion": "CS",
+          "postalCode": "87010",
+          "addressCountry": "IT"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+    <header class="site-header">
+      <nav class="desktop-nav nav-left" aria-label="Navigazione principale">
+        <a href="#sapori">La cucina</a>
+        <a href="#menu">Menù</a>
+        <a href="#storia">La storia</a>
+      </nav>
+      <a class="wordmark" href="#casa" aria-label="Kamastra, inizio pagina"
+        >Kamastra</a
+      >
+      <nav class="desktop-nav nav-right" aria-label="Civita e prenotazioni">
+        <a href="#civita">Civita</a>
+        <a href="#contatti">Contatti</a>
+        <a class="nav-book" href="#prenota">Prenota</a>
+      </nav>
+      <a class="mobile-book" href="#prenota">Prenota</a>
+      <button
+        class="menu-toggle"
+        aria-label="Apri navigazione"
+        aria-controls="mobile-nav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="contenuto">
+      <section id="casa" class="section hero" aria-labelledby="hero-title">
+        <div class="hero-media reveal-media">
+          <div class="postmark" aria-label="Civita, Calabria">
+            <span>Civita<br />Calabria</span>
+          </div>
+          <video
+            id="hero-video"
+            muted
+            autoplay
+            playsinline
+            loop
+            preload="none"
+            poster="assets/nonna-demo.webp"
+            aria-label="Preparazione della pasta fatta a mano"
+            hidden
+          ></video>
+          <img
+            id="hero-poster"
+            src="assets/nonna-demo.webp"
+            width="1122"
+            height="1402"
+            alt="Immagine dimostrativa generata: una nonna prepara la pasta a mano"
+            fetchpriority="high"
+          />
+          <span class="media-credit"
+            >Immagine dimostrativa · video in arrivo</span
+          >
+          <button
+            id="video-toggle"
+            class="media-toggle"
+            aria-label="Metti in pausa il video"
+            hidden
+          >
+            Pausa
+          </button>
+        </div>
+        <div class="hero-copy">
+          <div
+            class="editorial-heading hero-heading"
+            data-heading="Le cose buone|sanno di casa"
+            data-word="sempre"
+            data-label="da sempre"
+            data-level="1"
+            data-heading-id="hero-title"
+          >
+            <h1 id="hero-title" class="heading-block">
+              <span class="heading-line"><span>Le cose buone</span></span>
+              <span class="heading-line"><span>sanno di casa</span></span>
+              <span class="sr-only">da sempre</span>
+            </h1>
+            <div class="script-word" aria-hidden="true">da sempre</div>
+          </div>
+          <div class="hero-description delayed-content">
+            <span class="short-rule" aria-hidden="true"></span>
+            <p>
+              A <strong>Civita</strong>, tra ricordi di famiglia e
+              <strong>tradizioni arbëreshe</strong>, ogni sapore racconta una
+              storia.
+            </p>
+            <a class="button" href="#sapori">Scopri la nostra cucina</a>
+          </div>
+        </div>
+        <div class="hero-village illustration" data-art="civita"></div>
+        <a class="scroll-note" href="#sapori"
+          >Una storia da scoprire <span aria-hidden="true">↓</span></a
+        >
+      </section>
+
+      <section
+        id="sapori"
+        class="section flavors"
+        aria-labelledby="flavors-title"
+      >
+        <div class="section-kicker">01 / La nostra cucina</div>
+        <div
+          class="editorial-heading centered"
+          data-heading="I sapori di"
+          data-word="kamastra"
+          data-label="Kamastra"
+          data-heading-id="flavors-title"
+        >
+          <h2 id="flavors-title" class="heading-block">
+            <span class="heading-line"><span>I sapori di</span></span>
+            <span class="sr-only">Kamastra</span>
+          </h2>
+          <div class="script-word" aria-hidden="true">Kamastra</div>
+        </div>
+        <div
+          class="carousel"
+          role="region"
+          aria-roledescription="carosello"
+          aria-label="I sapori di Kamastra"
+        >
+          <div class="carousel-window">
+            <div class="carousel-track" id="dish-track"></div>
+          </div>
+          <div class="carousel-controls">
+            <button id="dish-prev" class="arrow" aria-label="Piatto precedente">
+              ←
+            </button>
+            <div
+              class="carousel-dots"
+              role="group"
+              aria-label="Scegli il piatto"
+            ></div>
+            <button id="dish-next" class="arrow" aria-label="Piatto successivo">
+              →
+            </button>
+            <button
+              id="dish-pause"
+              class="playback"
+              aria-label="Ferma scorrimento automatico"
+              aria-pressed="false"
+            >
+              Ⅱ
+            </button>
+          </div>
+          <p class="sr-only" id="dish-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section
+        id="menu"
+        class="section menu-section"
+        aria-labelledby="menu-title"
+      >
+        <div class="section-kicker">02 / Il menù</div>
+        <div
+          class="editorial-heading centered"
+          data-heading="Sfoglia il nostro"
+          data-word="menu"
+          data-label="menù"
+          data-heading-id="menu-title"
+        >
+          <h2 id="menu-title" class="heading-block">
+            <span class="heading-line"><span>Sfoglia il nostro</span></span>
+            <span class="sr-only">menù</span>
+          </h2>
+          <div class="script-word" aria-hidden="true">menù</div>
+        </div>
+        <div class="menu-categories" id="menu-categories"></div>
+        <p class="section-footnote">
+          Scegli una categoria e accomodati. <span aria-hidden="true">↗</span>
+        </p>
+      </section>
+
+      <section id="storia" class="section story" aria-labelledby="story-title">
+        <div class="section-kicker">03 / Le nostre radici</div>
+        <div class="family-photo-stage">
+          <figure class="family-polaroid">
+            <img
+              src="assets/famiglia-demo.webp"
+              width="1122"
+              height="1402"
+              alt="Immagine dimostrativa generata di una famiglia; non è una fotografia storica di Kamastra"
+              loading="lazy"
+            />
+            <figcaption>Le persone, prima di tutto.</figcaption>
+          </figure>
+          <div class="family-pin" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path
+                d="M32 20l-6-7-5 2 4 5-9-1-7-8 1 12 12 8-12-3 3 8 13 1-8 5 3 5 9-6-3 10 5-3 5 3-3-10 9 6 3-5-8-5 13-1 3-8-12 3 12-8 1-12-7 8-9 1 4-5-5-2z"
+              />
+              <path d="M27 16l-4-5 6 1 3 7 3-7 6-1-4 5-5 5z" />
+            </svg>
+          </div>
+          <span class="archive-disclaimer"
+            >Immagine dimostrativa · in attesa dell’archivio di famiglia</span
+          >
+        </div>
+        <div class="story-copy">
+          <div
+            class="editorial-heading"
+            data-heading="Una storia di"
+            data-word="famiglia"
+            data-label="famiglia"
+            data-heading-id="story-title"
+          >
+            <h2 id="story-title" class="heading-block">
+              <span class="heading-line"><span>Una storia di</span></span>
+              <span class="sr-only">famiglia</span>
+            </h2>
+            <div class="script-word" aria-hidden="true">famiglia</div>
+          </div>
+          <div class="story-text delayed-content">
+            <span class="short-rule" aria-hidden="true"></span>
+            <p>
+              <strong><em>Kamastra</em></strong> nasce a
+              <strong>Civita</strong>, tra le mura di un’<strong
+                >antica filanda</strong
+              >. Un luogo di lavoro diventato un luogo d’incontro.
+            </p>
+            <p>
+              Dal <strong>1995</strong>, la cucina arbëreshe e le risorse del
+              <strong>territorio</strong> raccontano una passione: riunire le
+              persone intorno alla tavola e farle sentire
+              <strong>sempre a casa</strong>.
+            </p>
+            <button class="button" id="story-more">
+              Scopri la nostra storia
+            </button>
+          </div>
+        </div>
+        <div class="pot-scene" aria-hidden="true">
+          <svg class="pot-hanger" viewBox="0 0 500 180">
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+            >
+              <path
+                d="M215 0q-12 12 0 23q12 12 0 24q-12 12 0 24q12 12 0 24q-12 12 0 24"
+              />
+              <path
+                d="M215 114q-13 20 4 22q11 1 9-10M215 136l-122 40M218 137l162 39"
+              />
+            </g>
+          </svg>
+          <div class="pot-drawing illustration" data-art="pignata"></div>
+          <svg class="pot-atmosphere" viewBox="0 0 500 600">
+            <g
+              class="steam"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M220 210C155 162 280 142 219 80C190 44 220 29 237 10" />
+              <path d="M280 213C225 170 350 130 294 86C269 65 290 28 304 17" />
+              <path d="M260 190C212 144 289 127 257 92" />
+            </g>
+            <g
+              class="fire"
+              fill="var(--terracotta)"
+              fill-opacity=".14"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                d="M220 494C170 465 245 436 217 393C263 423 211 435 246 453C270 418 251 398 279 374C263 429 316 452 286 491Z"
+              />
+              <path
+                d="M195 502C166 480 196 461 180 440C215 455 189 473 219 491M305 494C333 474 300 453 326 429"
+              />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section
+        id="civita"
+        class="section album-section"
+        aria-labelledby="album-title"
+      >
+        <div class="section-kicker">04 / Il nostro piccolo mondo</div>
+        <div
+          class="editorial-heading centered"
+          data-heading="Album di"
+          data-word="civita"
+          data-label="Civita"
+          data-heading-id="album-title"
+        >
+          <h2 id="album-title" class="heading-block">
+            <span class="heading-line"><span>Album di</span></span>
+            <span class="sr-only">Civita</span>
+          </h2>
+          <div class="script-word" aria-hidden="true">Civita</div>
+        </div>
+        <div class="album-stage">
+          <div
+            class="album-book"
+            id="album-book"
+            tabindex="0"
+            role="group"
+            aria-label="Album di Civita, sei doppie pagine. Usa le frecce della tastiera per sfogliare."
+          >
+            <div class="book-cover"></div>
+            <div class="book-pages" id="book-pages"></div>
+            <div class="book-spine" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="album-controls">
+          <div class="page-navigation">
+            <button
+              id="album-prev"
+              class="round-arrow"
+              aria-label="Pagina precedente"
+            >
+              ←
+            </button>
+            <span class="fine-rule" aria-hidden="true"></span>
+            <span id="album-count" aria-live="polite">1 / 6</span>
+            <span class="fine-rule" aria-hidden="true"></span>
+            <button
+              id="album-next"
+              class="round-arrow"
+              aria-label="Pagina successiva"
+            >
+              →
+            </button>
+          </div>
+          <button class="button album-cta" id="album-browse">
+            Sfoglia l’album <span aria-hidden="true">→</span>
+          </button>
+        </div>
+        <p class="album-hint">
+          Un ricordo alla volta. Tocca una fotografia per guardarla da vicino.
+        </p>
+      </section>
+
+      <section
+        id="prenota"
+        class="section booking-section"
+        aria-labelledby="booking-title"
+      >
+        <div class="section-kicker">05 / Ti aspettiamo</div>
+        <div
+          class="editorial-heading centered"
+          data-heading="Prenota un"
+          data-word="tavolo"
+          data-label="tavolo"
+          data-heading-id="booking-title"
+        >
+          <h2 id="booking-title" class="heading-block">
+            <span class="heading-line"><span>Prenota un</span></span>
+            <span class="sr-only">tavolo</span>
+          </h2>
+          <div class="script-word" aria-hidden="true">tavolo</div>
+        </div>
+        <div class="booking-table illustration" data-art="tavolo"></div>
+        <p class="booking-invitation">
+          <span></span>Ti aspettiamo a Civita<span></span>
+        </p>
+        <p class="booking-description">
+          La nostra cucina, tra <strong>tradizione</strong>, territorio e
+          ospitalità.
+        </p>
+        <form class="booking-form" id="booking-form">
+          <div class="booking-field">
+            <label for="booking-date">Data</label>
+            <input
+              type="date"
+              id="booking-date"
+              name="date"
+              required
+              aria-describedby="booking-note"
+            />
+          </div>
+          <div class="booking-field">
+            <label for="booking-time">Orario preferito</label>
+            <select
+              id="booking-time"
+              name="time"
+              required
+              aria-describedby="booking-note"
+            >
+              <option value="">Scegli l’orario</option>
+              <option>12:30</option>
+              <option>13:00</option>
+              <option>13:30</option>
+              <option>14:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+            </select>
+          </div>
+          <div class="booking-field">
+            <label for="booking-guests">Ospiti</label>
+            <select id="booking-guests" name="guests" required>
+              <option value="1">1 persona</option>
+              <option value="2" selected>2 persone</option>
+              <option value="3">3 persone</option>
+              <option value="4">4 persone</option>
+              <option value="5">5 persone</option>
+              <option value="6">6 persone</option>
+              <option value="7">7 persone</option>
+              <option value="8">8 persone</option>
+            </select>
+          </div>
+          <button class="button" type="submit">
+            Prenota online <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+        <p class="booking-note" id="booking-note">
+          Modulo dimostrativo. Gli orari sono preferenze, non disponibilità
+          verificate. Per prenotare: <a href="tel:+39098173387">0981 73387</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer id="contatti" class="site-footer">
+      <a class="footer-wordmark" href="#casa">Kamastra</a>
+      <div>
+        <span class="footer-label">Vieni a trovarci</span>
+        <address>
+          Piazza Municipio, 3/6<br />87010 Civita (CS), Calabria
+        </address>
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Kamastra+Piazza+Municipio+Civita"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Come arrivare ↗</a
+        >
+      </div>
+      <div>
+        <span class="footer-label">Parliamone a tavola</span>
+        <a href="tel:+39098173387">+39 0981 73387</a>
+        <a href="mailto:info@kamastra.net">info@kamastra.net</a>
+      </div>
+      <div class="footer-bottom">
+        <p>Prima versione di progetto · Archivio vivente</p>
+        <button id="project-info">Informazioni sull’anteprima</button>
+        <a href="#casa">Torna su ↑</a>
+      </div>
+    </footer>
+
+    <dialog
+      id="mobile-nav"
+      class="mobile-nav-dialog"
+      aria-labelledby="mobile-nav-title"
+    >
+      <div class="mobile-nav-top">
+        <span id="mobile-nav-title">Kamastra</span>
+        <button class="dialog-close" data-close aria-label="Chiudi navigazione">
+          ×
+        </button>
+      </div>
+      <nav aria-label="Navigazione mobile">
+        <a href="#sapori">La cucina <span>01</span></a>
+        <a href="#menu">Menù <span>02</span></a>
+        <a href="#storia">La storia <span>03</span></a>
+        <a href="#civita">Civita <span>04</span></a>
+        <a href="#contatti">Contatti <span>05</span></a>
+        <a href="#prenota">Prenota <span>↗</span></a>
+      </nav>
+      <p>Civita, Calabria · Cucina arbëreshe</p>
+    </dialog>
+
+    <dialog
+      id="content-dialog"
+      class="content-dialog"
+      aria-labelledby="dialog-title"
+    >
+      <button class="dialog-close" data-close aria-label="Chiudi pannello">
+        ×
+      </button>
+      <div id="dialog-body"></div>
+    </dialog>
+
+    <dialog
+      id="photo-dialog"
+      class="photo-dialog"
+      aria-label="Fotografia ingrandita"
+    >
+      <button class="dialog-close" data-close aria-label="Chiudi fotografia">
+        ×
+      </button>
+      <figure>
+        <img id="lightbox-image" src="assets/civita-1.webp" alt="" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <div class="lightbox-controls">
+        <button
+          class="round-arrow"
+          id="photo-prev"
+          aria-label="Fotografia precedente"
+        >
+          ←
+        </button>
+        <button
+          class="round-arrow"
+          id="photo-next"
+          aria-label="Fotografia successiva"
+        >
+          →
+        </button>
+      </div>
+    </dialog>
+    <noscript>
+      <p class="noscript-note">
+        Attiva JavaScript per esplorare il menù e l’album. Per informazioni e
+        prenotazioni chiama <a href="tel:+39098173387">0981 73387</a>.
+      </p>
+    </noscript>
+  </body>
+</html>
