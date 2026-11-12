@@ -2563,7 +2563,7 @@ dialog[open] {
 /* DA SEMPRE — titolo iniziale */
 .hero-heading .script-word {
   --sloop-x: 0px;
-  --sloop-y: -20px;
+  --sloop-y: -10px;
   --sloop-size: 25cqi;
   --ink-offset: -0.0065em;
 }
@@ -2696,7 +2696,7 @@ dialog[open] {
   }
 }
 
-/* Off-canvas illustration details stay inside their section. */
+
 .story {
   overflow: clip;
 }
@@ -2735,4 +2735,8 @@ dialog[open] {
     width: 12px;
     flex-shrink: 0;
   }
+}
+/* Interlinea del titolo iniziale */
+.hero-heading .heading-block {
+  line-height: 0.80;
 }
