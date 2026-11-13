@@ -2849,3 +2849,81 @@ dialog[open] {
 .story .pot-hanger {
   display: none;
 }
+/* Album: font manoscritto per tutti i testi sulle pagine */
+.album-section .album-note,
+.album-section .album-note strong,
+.album-section .note-prose,
+.album-section .album-annotation,
+.album-section .page-number {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Album mobile: testi al centro delle pagine */
+@media (max-width: 760px) {
+  .album-section .album-book {
+    aspect-ratio: 0.78;
+    min-height: 0;
+  }
+
+  /* Foto superiori */
+  .album-section .left .album-photo:first-child,
+  .album-section .right .album-photo:first-child {
+    top: 3%;
+    height: 29%;
+  }
+
+  /* Foto inferiori */
+  .album-section .left .album-photo:nth-child(2),
+  .album-section .right .album-photo:nth-child(2) {
+    top: auto;
+    bottom: 3%;
+    height: 29%;
+  }
+
+  /* Titolo e descrizione della pagina sinistra */
+  .album-section .album-note {
+    top: 50%;
+    right: 5%;
+    width: 90%;
+
+    margin: 0;
+    padding: 0 4px;
+
+    font-size: 18px;
+    line-height: 1.05;
+    text-align: center;
+
+    transform: translateY(-50%);
+  }
+
+  .album-section .album-note strong {
+    display: block;
+    margin-bottom: 6px;
+
+    font-size: 23px;
+    line-height: 1;
+  }
+
+  .album-section .album-note .note-prose {
+    display: block;
+  }
+
+  /* Annotazione della pagina destra */
+  .album-section .album-annotation {
+    top: 50%;
+    right: 5%;
+    width: 90%;
+
+    margin: 0;
+    padding: 0 4px;
+
+    font-size: 23px;
+    line-height: 1.05;
+    text-align: center;
+    white-space: pre-line;
+    border-bottom: 0;
+
+    transform: translateY(-50%);
+  }
+}
