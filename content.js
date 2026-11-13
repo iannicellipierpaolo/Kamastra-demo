@@ -5,8 +5,8 @@
  */
 export const settings = {
   restaurant: "Kamastra",
-  phone: "+39 0981 73387",
-  phoneLink: "+39098173387",
+  phone: "0981 XXXXX",
+  phoneLink: "0981 XXXXX",
   email: "info@kamastra.net",
   address: "Piazza Municipio, 3/6 · 87010 Civita (CS)",
   booking: {

@@ -419,7 +419,7 @@ class CivitaAlbum {
           </div>
         `
             : `
-          <p class="album-annotation">${escapeHtml(spread.annotation)}</p>
+            
           <div class="mini-sketch" data-mini-art></div>
         `
         }

@@ -2740,3 +2740,112 @@ dialog[open] {
 .hero-heading .heading-block {
   line-height: 0.80;
 }
+/*Illustrazione Civita.svg (solo web e tablet-no mobile)*/
+@media (min-width: 761px) {
+  .hero-village svg {
+    scale: 0.8;
+    translate: 87px 0;
+    transform-origin: center;
+  }
+}
+
+/* Homepage mobile*/
+@media (max-width: 760px) {
+  .hero-media {
+    width: 85%;
+    margin: 24px 0 0;
+  }
+
+  .hero-village {
+    position: relative;
+    translate: 27px 0;
+    grid-row: 3;
+    justify-self: end;
+
+    width: 45%;
+    right: auto;
+    bottom: auto;
+
+    margin: 16px 0 0;
+    padding: 0;
+  }
+}
+/* SEZIONE 03 — DESKTOP E TABLET */
+@media (min-width: 761px) {
+  .family-photo-stage {
+    width: 80%;
+    justify-self: center;
+  }
+}
+
+/* SEZIONE 03 — MOBILE */
+@media (max-width: 760px) {
+  .family-photo-stage {
+    width: 55%;
+    justify-self: start;
+  }
+}
+
+/* Nuovo timbro PNG: elimina il vecchio cerchio CSS */
+.family-pin {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.family-pin img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Timbro: dimensioni e posizione desktop */
+@media (min-width: 761px) {
+  .family-pin {
+    width: 75px;
+    top: 39px;
+    left: 46%;
+  }
+}
+
+/* Timbro: dimensioni e posizione mobile */
+@media (max-width: 760px) {
+  .family-pin {
+    width: 55px;
+    top: 44px;
+    left: 47%;
+  }
+}
+
+/* Sezione 04: nasconde il disegno di Civita nell’album */
+.album-section .mini-sketch {
+  display: none !important;
+}
+/* Sezione 03: dimensioni solo su mobile */
+@media (max-width: 760px) {
+  /* Foto di famiglia, compresa la cornice */
+  .story .family-photo-stage {
+    width: 60%;
+  }
+}
+/* Sezione 03: pignata solo su mobile */
+@media (max-width: 760px) {
+  .story .pot-scene {
+    --pignata-x: 120px;
+    --pignata-y: 10px;
+
+    width: 50%;
+    height: 400px;
+
+    translate:
+      var(--pignata-x)
+      var(--pignata-y);
+  }
+}
+/* Pignata: mantiene soltanto l’illustrazione principale */
+.story .pot-atmosphere,
+.story .pot-hanger {
+  display: none;
+}
