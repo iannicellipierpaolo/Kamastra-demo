@@ -2625,42 +2625,42 @@ dialog[open] {
   .hero-heading .script-word {
     --sloop-x: 0px;
     --sloop-y: 0px;
-    --sloop-size: 36cqi;
+    --sloop-size: 20cqi;
   }
 
   /* KAMASTRA */
   .flavors .script-word {
     --sloop-x: 0px;
     --sloop-y: 0px;
-    --sloop-size: 28cqi;
+    --sloop-size: 25cqi;
   }
 
   /* MENÙ */
   .menu-section .script-word {
     --sloop-x: 0px;
     --sloop-y: 0px;
-    --sloop-size: 40cqi;
+    --sloop-size: 25cqi;
   }
 
   /* FAMIGLIA */
   .story .script-word {
-    --sloop-x: 0px;
+    --sloop-x: -25px;
     --sloop-y: 0px;
-    --sloop-size: 24cqi;
+    --sloop-size: 18cqi;
   }
 
   /* CIVITA */
   .album-section .script-word {
-    --sloop-x: 0px;
+    --sloop-x: 17px;
     --sloop-y: 0px;
-    --sloop-size: 38cqi;
+    --sloop-size: 30cqi;
   }
 
   /* TAVOLO */
   .booking-section .script-word {
-    --sloop-x: 0px;
+    --sloop-x: 50px;
     --sloop-y: 0px;
-    --sloop-size: 40cqi;
+    --sloop-size: 25cqi;
   }
 }
 
