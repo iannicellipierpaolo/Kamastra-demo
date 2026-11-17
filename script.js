@@ -840,3 +840,106 @@ main().catch((error) => {
   document.body.classList.remove("motion-ready");
   console.error("Inizializzazione incompleta:", error);
 });
+/* ========================================
+   PREVENZIONE EMOJI APPLE
+======================================== */
+
+(() => {
+    "use strict";
+
+    const simboli = /([↗→←↑↓])(?!\uFE0E)/gu;
+
+    const esclusi = [
+        "script",
+        "style",
+        "noscript",
+        "textarea",
+        "code",
+        "pre",
+        "svg"
+    ].join(", ");
+
+    function correggiNodo(nodo) {
+        if (nodo.nodeType !== Node.TEXT_NODE) {
+            return;
+        }
+
+        if (
+            !nodo.parentElement ||
+            nodo.parentElement.closest(esclusi)
+        ) {
+            return;
+        }
+
+        const originale = nodo.nodeValue;
+
+        const corretto = originale.replace(
+            simboli,
+            "$1\uFE0E"
+        );
+
+        if (originale !== corretto) {
+            nodo.nodeValue = corretto;
+        }
+    }
+
+    function correggiContenuto(radice) {
+        if (radice.nodeType === Node.TEXT_NODE) {
+            correggiNodo(radice);
+            return;
+        }
+
+        if (
+            radice.nodeType !== Node.ELEMENT_NODE &&
+            radice.nodeType !== Node.DOCUMENT_FRAGMENT_NODE
+        ) {
+            return;
+        }
+
+        const walker = document.createTreeWalker(
+            radice,
+            NodeFilter.SHOW_TEXT
+        );
+
+        while (walker.nextNode()) {
+            correggiNodo(walker.currentNode);
+        }
+    }
+
+    function avviaCorrezione() {
+        correggiContenuto(document.body);
+
+        const observer = new MutationObserver(
+            (modifiche) => {
+                modifiche.forEach((modifica) => {
+                    if (
+                        modifica.type === "characterData"
+                    ) {
+                        correggiNodo(modifica.target);
+                        return;
+                    }
+
+                    modifica.addedNodes.forEach(
+                        correggiContenuto
+                    );
+                });
+            }
+        );
+
+        observer.observe(document.body, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            avviaCorrezione,
+            { once: true }
+        );
+    } else {
+        avviaCorrezione();
+    }
+})();
